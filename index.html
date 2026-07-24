@@ -1094,6 +1094,49 @@ display:block;
 .cta-actions .btn:nth-child(3){
   animation-delay:.5s;
 }
+.syllabus-path{ max-width:720px; margin:0 auto; }
+.path-flag{ display:flex; align-items:center; gap:12px; font-family:var(--mono); font-size:13.5px; color:var(--chalk-dim); font-weight:600; }
+.path-flag.start{ margin-bottom:18px; }
+.path-flag.end{ margin-top:18px; }
+.flag-dot{
+  width:34px; height:34px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:rgba(255,255,255,0.06); border:1.5px dashed var(--line);
+  font-size:15px; flex-shrink:0;
+}
+
+.path-steps{ position:relative; }
+.path-steps::before{
+  content:""; position:absolute; left:25px; top:6px; bottom:6px; width:2px;
+  background:linear-gradient(to bottom, var(--marigold), var(--navy) 90%);
+  opacity:.4;
+}
+.path-step{ position:relative; display:flex; gap:20px; padding-bottom:28px; }
+.path-step:last-child{ padding-bottom:0; }
+
+.path-marker{
+  position:relative; width:50px; height:50px; border-radius:50%;
+  background:var(--paper); border:2px solid var(--marigold); color:var(--marigold);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--mono); font-weight:700; font-size:14px; flex-shrink:0; z-index:1;
+}
+
+.path-card{
+  flex:1; background:rgb(251, 247, 222); border:1px solid var(--line-card); border-radius:16px;
+  padding:22px 24px; transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.path-card:hover{ transform:translateY(-4px); box-shadow:0 24px 44px -26px rgba(18,41,43,0.3); border-color:rgba(255,193,69,0.4); }
+
+.path-card-top{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:6px; }
+.path-card-top h4{ font-size:19px; }
+.path-count{ font-family:var(--mono); font-size:12px; color:var(--slate); white-space:nowrap; }
+.path-desc{ color:var(--slate); font-size:14.5px; line-height:1.6; margin:6px 0 14px; }
+.path-card, .path-card h4{ color:var(--ink); }
+@media (max-width:560px){
+  .path-step{ gap:14px; }
+  .path-steps::before{ left:21px; }
+  .path-marker{ width:42px; height:42px; font-size:12px; }
+}
 /* ===== FOOTER ===== */
 .footer{
   padding:32px 0;
@@ -1366,87 +1409,87 @@ Small live batches with direct doubt support so you can learn without feeling st
 </section>
 
 <!-- CURRICULUM -->
+<!-- CURRICULUM -->
 <section class="section" id="syllabus">
   <div class="wrap">
     <div class="section-head center reveal">
       <div class="eyebrow">Python syllabus</div>
-      <h2 class="section-title">Everything is grouped, nothing is random</h2>
-      <p class="section-lead">This is the syllabus for the Python course — topics build on each other in order, so each module unlocks the next.</p>
+      <h2 class="section-title">Learn Python one step at a time</h2>
+      <p class="section-lead">No prior coding experience needed. Each module below builds on the last, so you always know exactly what's next.</p>
     </div>
 
-    <div class="report-card reveal">
-      <div class="report-head"><span>Python Syllabus</span><span>18 topics · 6 modules</span></div>
+    <div class="syllabus-path reveal">
+      <div class="path-flag start"><span class="flag-dot">🏁</span> Start here — day 1</div>
 
-      <div class="report-row">
-        <span class="report-num">01</span>
-        <span class="report-mod">Foundations</span>
-        <div class="chip-row">
-          <span class="chip">Python introduction</span><span class="chip">Variables</span><span class="chip">Operators</span><span class="chip">Data types</span><span class="chip">Data type methods</span>
+      <div class="path-steps">
+        <div class="path-step">
+          <div class="path-marker">01</div>
+          <div class="path-card">
+            <div class="path-card-top"><h4>Foundations</h4><span class="path-count">5 topics</span></div>
+            <p class="path-desc">Set up Python and learn the basic building blocks every program uses.</p>
+            <div class="chip-row">
+              <span class="chip">Python introduction</span><span class="chip">Variables</span><span class="chip">Operators</span><span class="chip">Data types</span><span class="chip">Data type methods</span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="report-row">
-        <span class="report-num">02</span>
-        <span class="report-mod">Control Flow</span>
-        <div class="chip-row">
-          <span class="chip">If conditions</span><span class="chip">Loops</span><span class="chip">Comprehensions</span>
-        </div>
-      </div>
-      <div class="report-row">
-        <span class="report-num">03</span>
-        <span class="report-mod">Functions</span>
-        <div class="chip-row">
-          <span class="chip">Functions</span><span class="chip">Args &amp; kwargs</span><span class="chip">Lambda</span><span class="chip">Map &amp; filter</span>
-        </div>
-      </div>
-      <div class="report-row">
-        <span class="report-num">04</span>
-        <span class="report-mod">Modules &amp; Iteration</span>
-        <div class="chip-row">
-          <span class="chip">Modules &amp; packages</span><span class="chip">Iterators &amp; generators</span>
-        </div>
-      </div>
-      <div class="report-row">
-        <span class="report-num">05</span>
-        <span class="report-mod">Files &amp; Errors</span>
-        <div class="chip-row">
-          <span class="chip">File handling</span><span class="chip">Exception handling</span>
-        </div>
-      </div>
-      <div class="report-row">
-        <span class="report-num">06</span>
-        <span class="report-mod">Advanced Concepts</span>
-        <div class="chip-row">
-          <span class="chip">Decorators</span><span class="chip">OOP</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- WHY -->
-<section class="section">
-  <div class="wrap">
-    <div class="section-head center reveal">
-      <div class="eyebrow">Why this course</div>
-      <h2 class="section-title">Built for people who've never coded before</h2>
-      <p class="section-lead">No prior experience assumed. No rushing through slides. Just clear explanations, taught the way a trained teacher teaches — not just the way a coder codes.</p>
-    </div>
-    <div class="feature-grid">
-      <div class="feature-card reveal shine-hover">
-        <div class="feature-mark" style="background:var(--navy);">01</div>
-        <h4>Explained simply, first</h4>
-        <p>Every concept is broken down in plain language before the technical term ever shows up — the way good teaching, not just good code, works.</p>
+        <div class="path-step">
+          <div class="path-marker">02</div>
+          <div class="path-card">
+            <div class="path-card-top"><h4>Control Flow</h4><span class="path-count">3 topics</span></div>
+            <p class="path-desc">Teach your programs to make choices and repeat actions.</p>
+            <div class="chip-row">
+              <span class="chip">If conditions</span><span class="chip">Loops</span><span class="chip">Comprehensions</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="path-step">
+          <div class="path-marker">03</div>
+          <div class="path-card">
+            <div class="path-card-top"><h4>Functions</h4><span class="path-count">4 topics</span></div>
+            <p class="path-desc">Package your code into reusable, shareable pieces.</p>
+            <div class="chip-row">
+              <span class="chip">Functions</span><span class="chip">Args &amp; kwargs</span><span class="chip">Lambda</span><span class="chip">Map &amp; filter</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="path-step">
+          <div class="path-marker">04</div>
+          <div class="path-card">
+            <div class="path-card-top"><h4>Modules</h4><span class="path-count">1 topic</span></div>
+            <p class="path-desc">Organize your code across files and reuse it anywhere.</p>
+            <div class="chip-row">
+              <span class="chip">Modules &amp; packages</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="path-step">
+          <div class="path-marker">05</div>
+          <div class="path-card">
+            <div class="path-card-top"><h4>Files &amp; Errors</h4><span class="path-count">2 topics</span></div>
+            <p class="path-desc">Deal with errors gracefully and read or save files.</p>
+            <div class="chip-row">
+              <span class="chip">File handling</span><span class="chip">Exception handling</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="path-step">
+          <div class="path-marker">06</div>
+          <div class="path-card">
+            <div class="path-card-top"><h4>Advanced Concepts</h4><span class="path-count">2 topics</span></div>
+            <p class="path-desc">Structure bigger programs the way professionals do.</p>
+            <div class="chip-row">
+              <span class="chip">Decorators</span><span class="chip">OOP</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="feature-card reveal shine-hover">
-        <div class="feature-mark" style="background:var(--rust);">02</div>
-        <h4>Practice every class</h4>
-        <p>You'll write code in almost every session — not just watch it. That's what actually makes it stick.</p>
-      </div>
-      <div class="feature-card reveal shine-hover">
-        <div class="feature-mark" style="background:var(--marigold); color:var(--ink);">03</div>
-        <h4>Doubts don't pile up</h4>
-        <p>Stuck between classes? Reach out directly — you won't wait a whole week for an answer.</p>
-      </div>
+
+      <div class="path-flag end"><span class="flag-dot">🎉</span> You're ready to build real projects</div>
     </div>
   </div>
 </section>
